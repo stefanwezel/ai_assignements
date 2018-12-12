@@ -1,1 +1,0 @@
-print("Gwent ist evtl. ein Echsenmensch forsicht!!")
