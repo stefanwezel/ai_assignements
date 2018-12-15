@@ -51,15 +51,15 @@ public class KCell extends Game<Integer> {
 	public KCell(final int size, final int stones) {
 		this.size = size;
 		this.stones = stones;
-		this.state = state;
-		//
-		// TODO: implement me
-		//
+		this.state = new int[size];
 		for(int i = 0; i < size; i++){
 			if(i < stones)
-				state[i] == 0;
-			if(i > (size - stones))
-				state[i] == 1;
+				state[i] = 0;
+			else if(i >= (size - stones))
+				state[i] = 1;
+			else
+				state[i] = -1;
+				
 		}
 	}
 
@@ -120,7 +120,7 @@ public class KCell extends Game<Integer> {
 		for (int i = 0; i < state.length; i++) {
 			if(state[i] != 1)
 				player2finished = true;
-			if(!player2finished)AlphaBetaAgent
+			if(!player2finished)
 				counterplayer1++;
 			if(state[state.length-1-i] != 0)
 				player1finished = true;
@@ -152,6 +152,15 @@ public class KCell extends Game<Integer> {
 		//
 		// TODO: implement me
 		//
+		int[] state = this.state;
+		int player = getCurrentPlayer();
+		if(move < 0 || move >= size)
+			return false;
+		else if(state[move] == -1)
+			return false;
+		
+		else if(move -1 >= 0 && state[move -1] == player && state[move] != player)
+			return true;
 		return false;
 	}
 	
@@ -167,7 +176,7 @@ public class KCell extends Game<Integer> {
 		//
 		// TODO: implement me
 		//
-		return null;
+		return this.state;
 	}
 
 	
@@ -184,7 +193,16 @@ public class KCell extends Game<Integer> {
 		//
 		// TODO: implement me
 		//
-		return "";
+		String s = "";
+		for (int i = 0; i < state.length; i++) {
+			if(state[i] == 1)
+				s += "x";
+			else if(state[i] == 0)
+				s+= "o";
+			else 
+				s+= "-";
+		}
+		return s;
 	}
 
 }
