@@ -1,0 +1,14 @@
+
+1: Nc3 Na4
+2: Qb1 c4
+3: e3 Rb6
+4: Qc1 b4
+5: Nxa4 Qxa4
+6: Ke2 Qc6
+7: c3 Ra6
+8: Qb1 Qb6
+9: xb4 xb4
+10: f3 f4
+11: Kd1 xe3
+12: Nc2 Qa5
+13: Nxe3 c3
