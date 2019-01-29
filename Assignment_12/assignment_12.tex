@@ -25,12 +25,12 @@
 \geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
 % Diese Daten müssen pro Blatt angepasst werden:
 \newcommand{\NUMBER}{6}
-\newcommand{\EXERCISES}{3}
+\newcommand{\EXERCISES}{4}
 % Diese Daten müssen einmalig pro Vorlesung angepasst werden:
-\newcommand{\COURSE}{Algorithmen}
+\newcommand{\COURSE}{Artificial Intelligwents}
 \newcommand{\TUTOR}{TBD}
 \newcommand{\STUDENTA}{}
-\newcommand{\STUDENTB}{Lukas Guenthner}
+\newcommand{\STUDENTB}{Stefan Wezel}
 \newcommand{\STUDENTC}{Gwent Krause}
 \newcommand{\DEADLINE}{07.06.2018}
 
@@ -98,8 +98,8 @@
 	\begin{tabularx}{\linewidth}{m{0.2 \linewidth}X}
 		\begin{minipage}{\linewidth}
 		%	\STUDENTA
-			\STUDENTB
-			\STUDENTC
+			\STUDENTB\\
+			\STUDENTC\\
 		\end{minipage} & \begin{minipage}{\linewidth}
 			\punkteliste{1}{\EXERCISES}
 		\end{minipage}\\
@@ -111,11 +111,12 @@
 	% Hier werden die Aufgaben/Lösungen eingetragen:
 	
 \section*{Question 1:}
-
+\includegraphics*[scale = 0.4]{AIQ1.png}
 \section*{Question 3:}
+\subsection*{a)}
 \begin{tabular}{|c|c|c|c|c|c|}
 	\hline 
-	S & E & A & $S \Rightarrow (\neg A \Rightarrow \neg E)$ & $S \Leftrightarrow (A \wedge E)$ & $S  \Rightarrow(E\Leftrightarrow A)$ \\ 
+	S & E & A & $S \Rightarrow (\neg A \Rightarrow \neg E)$ & $S \Leftrightarrow (A \lor E)$ & $S  \Rightarrow(E\Leftrightarrow A)$ \\ 
 	\hline 
 	0 & 0 & 0 & 1 & 1 & 1 \\ 
 	\hline 
@@ -133,8 +134,28 @@
 	\hline 
 	1 & 1 & 1 & 1 & 1 & 1 \\ 
 	\hline 
-\end{tabular}
+\end{tabular}\\
+\subsection*{i)}
+Stimmt nicht mit der Aussage des Professors ueberein. Nach dieser Aussage kann ein Nicht-Student eine finale Pruefung vorstellen, wenn er mindestens 5 Abgaben bearbeitet hat.\\
+\subsection*{ii)}
+Stimmt nicht mit der Aussage des Proffesors ueberein. Es koennte ein Student seine finale Pruefung vorstellen ohne die noetigen 5 Abgaben bearbeitet zu haben.\\
+\subsection*{iii)}
+Stimmt nicht mit der Aussage des Professors ueberein. Ein Student muss wenn er die Abgaben erledigt hat auch an der finalen Pruefung teilnehmen und hat nicht nur die Erlaubnis dazu.\\ 
 
+\subsection*{b)}
+\subsubsection*{i)}
+CNF:\\
+$A \lor \neg E \lor \neg S$\\
+Hornklausel, da nur A nicht negiert ist.\\
+
+\subsubsection*{ii)}
+CNF:\\
+$(A \lor E \lor \neg S) \land (A \lor \neg E \lor S) \land (\neg A \lor E \lor S) \land (\neg A \lor \neg E \lor S)$\\
+Nur $(\neg A \lor \neg E \lor S)$ Hornklausel, bei den anderen Klauseln sind mehr als eine Variable nicht negiert.\\
+\subsubsection*{iii)}
+CNF:\\
+$(A \lor \neg E \lor \neg S) \land (\neg A \lor \neg E \lor S)$\\
+Hornklauseln, da bei beiden Klauseln nicht mehr als eine Variable nicht negiert ist.\\
 
 
 
